@@ -15,62 +15,70 @@
     </head>
     <body>
         <div class="container">
-            <navbar>
-                <ul class="nav_links">
+
+            <div class="navbar">
+                <a href="#" class="burger" onclick="show_menu()">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <div class="menu" id="menu">
                     <li><a href="#">Services</a></li>
                     <li><a href="#">Projects</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Contact</a></li>
+                </div>
+            </div>
     
-                </ul>
-            </navbar>
-    
-            <about>
+            <div class="about">
                 <h1>GiannisF12</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum minima soluta minus quibusdam, natus facilis tempore labore aspernatur, ratione recusandae nisi nulla saepe, tempora pariatur explicabo ad! Illo, voluptatem quia.</p>
+                <p style="text-align: center;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum minima soluta minus quibusdam, natus facilis tempore labore aspernatur, ratione recusandae nisi nulla saepe, tempora pariatur explicabo ad! Illo, voluptatem quia.</p>
                 <div class="circle">
                     <a><i class="uil uil-github-alt"></i></a>
                     <a><i class="uil uil-linkedin-alt"></i></a>
-					<a><i class="fa-brands fa-facebook"></i></a>
+					<a><i class="uil uil-facebook-f"></i></a>
                 </div>
                 <div class="button">
                     <button>Download CV</button>
                 </div>
-            </about>
-    
-            <skills>
-                <div class="skills">
-                    <div class="html">
-                        <img src="assets/svg/html5.svg"/>
-                        <p>HTML</p>
-                    </div>
-                    <div class="css">
-                        <img src="assets/svg/css3-simple.svg"/>
-                        <p>CSS</p>
-                    </div>
-                    <div class="js">
-                        <img src="assets/svg/java-script.svg"/>
-                        <p>JavaScript</p>
-                    </div>
-                    <div class="react">
-                        <img src="assets/svg//react.svg"/>
-                        <p>React</p>
-                    </div>
-                </div>
-            </skills>
-    
-            <projects>
-    
-            </projects>
+            </div>
 
-            <contact>
-    
-            </contact>
+            <div class="skills">
+                <h1>My Skills</h1>
+                <div class="icon" style="border-color: #df0b04;">
+                    <img src="assets/svg/html5.svg"/>
+                    <div>HTML</div>
+                </div>
+                <div class="icon" style="border-color: #0257f5fa;">
+                    <img src="assets/svg/css3-simple.svg"/>
+                    <div>CSS</div>
+                </div>
+                <div class="icon" style="border-color: #f8fc02;">
+                    <img src="assets/svg/java-script.svg"/>
+                    <div>Javascript</div>
+                </div>
+                <div class="icon" style="border-color: #01d7fd;">
+                    <img src="assets/svg//react.svg"/>
+                    <div>React</div>
+                </div>
+            </div>
+
+            <div class="projects"></div>
+
+            <div class="contact"></div>
         </div>
         
     
         <!--JS-->
         <script src=""></script>
+        <script>
+            function show_menu() {
+                var x = document.getElementById("menu");
+                if (x.style.display === "block") {
+                    x.style.display = "none";
+                } else {
+                    x.style.display = "block";
+                }
+            }
+        </script>
     </body>
 
 </html>

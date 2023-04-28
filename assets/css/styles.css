@@ -23,7 +23,7 @@ body
     'contact';
 }
 
-navbar 
+.navbar 
 { 
     grid-area: navbar; 
     display: flex;
@@ -31,7 +31,7 @@ navbar
     padding: 30px 10%;
     background-color: #141414;
 }
-projects { 
+.projects { 
     grid-area: projects;
     padding: 50px;
  }
@@ -47,26 +47,44 @@ li,  a, button
 
 }
 
+/* NAVBAR SECTION */
 
-.nav_links
+.menu
 {
     list-style: none;
 }
-.nav_links li 
+.menu li 
 {
     display: inline-block;
     padding: 0px 20px;
 }
-.nav_links li a 
+.memu li a 
 {
     transition: all 0.3s ease 0s;
 }
-.nav_links li a:hover 
+.menu li a:hover 
 {
     color: aqua;
 }
 
-about
+
+@media (max-width: 600px)
+{
+    #menu
+    {
+        display: none;
+    }
+    
+    .navbar
+    {
+        justify-content: left;
+    }
+    
+}
+
+/* ABOUT SECTION */
+
+.about
 {
     grid-area: about;
     display: flex;
@@ -87,95 +105,69 @@ h1
 }
 
 
-.social-media
+.circle
 {
 
-    display: inline-flex;
+    display: flex;
     gap: 10px;
-
+    cursor: pointer;
 }
 
-.social-media a img
+.circle a i
 {
-    padding: 10px;
-    border-radius: 15px;
-    border: 2px solid #015bb6;
-    width: 50px;
-    /* filter: invert(100%) brightness(0.8) hue-rotate(180deg) saturate(5);  */
+    border-radius: 100%;
+    border: 1px solid white;
+    padding: 0.8rem 1rem;
+
+}
+.circle a i:hover
+{
+    color: #0066cc;
+    border-color: #0066cc;
+
 }
 .button
 {
     padding: 50px;
 }
-.social-media img:hover
-{
-    background-color: #0066cc;
-}
 
+/* SKILLS SECTION */
 
-
-skills
+.skills
 {
     grid-area: skills;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     background-color: #141414;
-    height: 60vh;
-}
-.skills
-{
-    display: inline-flex;
+    padding: 50pt 0;
     gap: 20px;
+    width: 100%;
 }
-skills .skills .html
+
+.skills .icon
 {
     border-radius: 15px;
-    border: 2px solid #df0b04;
+    border: 2px solid;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 10rem;
+    color: white;
+    font-size: 10pt;
+    gap: 10px;
+    padding: 20px 5px;
 }
-skills .skills .css
+
+.skills img
 {
-    border-radius: 15px;
-    border: 2px solid #026df8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    
-}
-skills .skills .js
-{
-    border-radius: 15px;
-    border: 2px solid #e5f505;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-skills .skills .react
-{
-    border-radius: 15px;
-    border: 2px solid #00FFF5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-skills .skills p
-{
-    
-}
-/* .skills img
-{
-    padding: 10px;
-    border-radius: 15px;
-    border: 2px solid #015bb6;
     width: 50px;
-} */
+}
+
+
+
 
 
 
