@@ -1,12 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Raleway', sans-serif;
+}
 *
 {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth;
-    
 }
 body
 {
@@ -144,6 +146,7 @@ h1
     padding: 50pt 0;
     gap: 20px;
     width: 100%;
+    height: 100vh;
 }
 
 .skills .icon
