@@ -20,7 +20,8 @@ body
     grid-template-areas:
     'navbar'
     'about'
-    'skills'
+    'frontend-skills'
+    'backend-skills'
     'projects'
     'contact';
 }
@@ -133,11 +134,11 @@ h1
     padding: 50px;
 }
 
-/* SKILLS SECTION */
+/* FRONTEND SKILLS SECTION */
 
-.skills
+.frontend-skills
 {
-    grid-area: skills;
+    grid-area: frontend-skills;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -147,7 +148,7 @@ h1
     flex-direction: column;
 }
 
-.skills .icon
+.frontend-skills .icon
 {
     border-radius: 15px;
     border: 2px solid;
@@ -155,19 +156,21 @@ h1
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 10rem;
+    height: 7.5rem;
+    width: 11rem;
     color: white;
     font-size: 10pt;
     gap: 10px;
     padding: 20px 5px;
 }
 
-.skills img
+.frontend-skills img
 {
-    width: 50px;
+    width: 2.5rem;
+    height: 3rem;
 }
 
-.icon-skills
+.frontend-skills .icon-skills
 {
     display: flex;
     flex-wrap: wrap;
@@ -179,11 +182,58 @@ h1
 
 }
 
+/* BACKEND SKILLS SECTION */
 
+.backend-skills
+{
+    grid-area: backend-skills;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 50pt 0;
+    flex-direction: column;
+}
 
+.backend-skills .icon
+{
+    border-radius: 15px;
+    border: 2px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 7.5rem;
+    width: 11rem;
+    color: white;
+    font-size: 10pt;
+    gap: 10px;
+    padding: 20px 5px;
+}
 
+.backend-skills img
+{
+    width: 2.5rem;
+    height: 3rem;
+}
 
+.backend-skills .icon-skills
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 50pt 0;
+    gap: 20px;
 
+}
+
+/* PROJECTS SECTION */
+
+.projects
+{
+    background-color: #141414;
+}
 
 
 
