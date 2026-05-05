@@ -1,40 +1,44 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Syne, Geist_Mono } from "next/font/google";
+import CursorFx from "@/components/CursorFx";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const syne = Syne({
+  variable: "--font-syne",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
   title: "Giannis Foras — Full-stack Developer",
   description:
-    "Portfolio of Giannis Foras, a full-stack developer building clean, fast web applications.",
+    "Selected projects by Giannis Foras, a full-stack developer based in Athens.",
   openGraph: {
     title: "Giannis Foras — Full-stack Developer",
     description:
-      "Portfolio of Giannis Foras, a full-stack developer building clean, fast web applications.",
+      "Selected projects by Giannis Foras, a full-stack developer based in Athens.",
     type: "website",
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${syne.variable} ${geistMono.variable} antialiased`}
     >
-      <body className="min-h-full bg-[#080808] text-[#ededed]">{children}</body>
+      <body>
+        <CursorFx />
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,75 +1,103 @@
 @import "tailwindcss";
 
 :root {
-  --accent: #bef264;
-  --accent-2: #67e8f9;
+  --bg:    #000;
+  --text:  #f0f0f0;
+  --mute:  #555;
+  --dim:   #2a2a2a;
+  --c:     #00d4ff;          /* electric cyan accent */
+  --c-h:   #4d8aff;          /* blue used on hover */
+  --c2:    rgba(0, 212, 255, 0.12);
+  --c3:    rgba(0, 212, 255, 0.06);
+  --line:  rgba(255, 255, 255, 0.07);
+  --line2: rgba(255, 255, 255, 0.13);
 }
 
 @theme inline {
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-syne);
   --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-text: var(--text);
+  --color-c: var(--c);
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background-color: #080808;
-  color: #ededed;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-syne), -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+/* hide native cursor everywhere (custom cursor handles it) */
+html, body, *, *::before, *::after {
+  cursor: none !important;
+}
+@media (hover: none) {
+  html, body, *, *::before, *::after { cursor: auto !important; }
 }
 
-/* Gradient text utility */
-.gradient-text {
-  background: linear-gradient(135deg, var(--accent) 20%, var(--accent-2) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+::selection { background: var(--c); color: #000; }
+
+/* scrollbar matches cursor */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: var(--c); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--c-h); }
+
+/* scanlines */
+body::after {
+  content: "";
+  position: fixed; inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.012) 0px,
+    rgba(255, 255, 255, 0.012) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+  z-index: 1;
 }
 
-/* Dot grid texture */
-.dot-grid {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-  background-size: 28px 28px;
+/* breathing dot */
+@keyframes breathe {
+  0%, 100% { box-shadow: 0 0 8px var(--c), 0 0 16px rgba(0, 212, 255, 0.5); }
+  50%      { box-shadow: 0 0 12px var(--c), 0 0 28px rgba(0, 212, 255, 0.8); }
 }
+.breathe { animation: breathe 2.8s ease-in-out infinite; }
 
-/* Entrance animations */
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(28px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* shimmer sweep on cards */
+@keyframes sweep {
+  from { left: -80%; }
+  to   { left: 130%; }
 }
-
-@keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.shimmer {
+  position: absolute; top: 0; bottom: 0;
+  left: -80%; width: 55%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 212, 255, 0.10) 50%,
+    transparent 100%
+  );
+  transform: skewX(-12deg);
+  pointer-events: none;
+  z-index: 2;
 }
+.lit .shimmer { animation: sweep 0.55s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
 
-.animate-fade-up {
-  animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+/* staggered rise */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-
-.animate-fade-in {
-  animation: fade-in 1s ease both;
-}
-
-.delay-0   { animation-delay: 0s; }
-.delay-1   { animation-delay: 0.1s; }
-.delay-2   { animation-delay: 0.25s; }
-.delay-3   { animation-delay: 0.4s; }
-.delay-4   { animation-delay: 0.55s; }
-.delay-5   { animation-delay: 0.7s; }
+.rise { opacity: 0; animation: rise 600ms ease forwards; }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-fade-up,
-  .animate-fade-in {
-    animation: none;
-  }
+  .rise, .breathe, .lit .shimmer { animation: none; }
+  .rise { opacity: 1; }
+  body { cursor: auto; }
 }
