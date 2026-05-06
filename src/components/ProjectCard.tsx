@@ -8,9 +8,11 @@ import { iconFor } from "@/lib/tech-icons";
 export default function ProjectCard({
   project,
   delayMs = 0,
+  priority = false,
 }: {
   project: Project;
   delayMs?: number;
+  priority?: boolean;
 }) {
   const cardRef = useRef<HTMLElement | null>(null);
   const [lit, setLit] = useState(false);
@@ -76,6 +78,7 @@ export default function ProjectCard({
                   src={src}
                   alt={`${project.title} (${i + 1})`}
                   fill
+                  priority={priority && i === 0}
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 16vw"
                   className="object-cover opacity-80 transition-opacity duration-300 group-hover:opacity-100"
                 />
@@ -87,6 +90,7 @@ export default function ProjectCard({
             src={project.image}
             alt={project.title}
             fill
+            priority={priority}
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             className="object-cover opacity-80 transition-opacity duration-300 group-hover:opacity-100"
           />
@@ -106,7 +110,7 @@ export default function ProjectCard({
           >
             {project.title}
           </h2>
-          <span className="shrink-0 font-mono text-[11px] text-[var(--dim)]">
+          <span className="shrink-0 font-mono text-[11px] text-[var(--dim)] text-cyan-400/80">
             {project.year}
           </span>
         </div>
@@ -134,7 +138,7 @@ export default function ProjectCard({
                     width={11}
                     height={11}
                     aria-hidden="true"
-                    className="shrink-0"
+                    className="h-[11px] w-[11px] shrink-0 object-contain"
                   />
                 )}
                 <span>{t}</span>
@@ -184,6 +188,7 @@ export default function ProjectCard({
                 width={18}
                 height={18}
                 aria-hidden="true"
+                className="h-[18px] w-[18px] object-contain"
               />
             </a>
           )}

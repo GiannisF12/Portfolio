@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Syne, Geist_Mono } from "next/font/google";
-import CursorFx from "@/components/CursorFx";
 import "./globals.css";
 
 const syne = Syne({
@@ -18,11 +17,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Giannis Foras — Full-stack Developer",
   description:
-    "Selected projects by Giannis Foras, a full-stack developer based in Athens.",
+    "Selected projects by Giannis Foras, a full-stack developer.",
   openGraph: {
     title: "Giannis Foras — Full-stack Developer",
     description:
-      "Selected projects by Giannis Foras, a full-stack developer based in Athens.",
+      "Selected projects by Giannis Foras, a full-stack developer.",
     type: "website",
   },
 };
@@ -35,10 +34,7 @@ export default function RootLayout({
       lang="en"
       className={`${syne.variable} ${geistMono.variable} antialiased`}
     >
-      <body>
-        <CursorFx />
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

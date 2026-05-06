@@ -7,6 +7,8 @@ type Props = {
   items: Project[];
   emptyText?: string;
   startDelayMs?: number;
+  /** When true, the first card's image gets loading priority (LCP optimisation). */
+  priorityFirst?: boolean;
 };
 
 export default function Work({
@@ -15,6 +17,7 @@ export default function Work({
   items,
   emptyText,
   startDelayMs = 0,
+  priorityFirst = false,
 }: Props) {
   return (
     <section id={id} className="relative z-10 pt-10 sm:pt-14">
@@ -39,6 +42,7 @@ export default function Work({
               key={p.slug}
               project={p}
               delayMs={startDelayMs + i * 70}
+              priority={priorityFirst && i === 0}
             />
           ))}
         </div>

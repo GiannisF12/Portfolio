@@ -16,6 +16,7 @@ export default function Home() {
         heading="Personal projects"
         items={personal}
         startDelayMs={300}
+        priorityFirst
       />
       <Work
         id="clients"
