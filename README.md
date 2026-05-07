@@ -116,4 +116,4 @@ The site comes up on [localhost:3000](http://localhost:3000) inside a production
 
 ## License
 
-Code: MIT. Content (text, CV, project screenshots) © Giannis Foras.
+Code: MIT. Content (text, CV, project screenshots) © GiannisF12.
