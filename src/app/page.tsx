@@ -8,7 +8,7 @@ export default function Home() {
   const clients = projects.filter((p) => p.type === "client");
 
   return (
-    <div className="relative mx-auto max-w-[1200px] px-7">
+    <div className="relative mx-auto max-w-[1200px] px-5 sm:px-7">
       <Nav />
       <Hero />
       <Work

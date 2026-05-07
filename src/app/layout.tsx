@@ -15,14 +15,58 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Giannis Foras — Full-stack Developer",
+  metadataBase: new URL("https://giannisf12.dev"),
+  title: {
+    default: "Portfolio",
+    template: "%s · Giannis Foras",
+  },
   description:
-    "Selected projects by Giannis Foras, a full-stack developer.",
+    "Computer Science graduate. Full-stack work across Java/Spring Boot, Next.js, and PHP, plus a machine-learning thesis. Open to entry-level roles.",
+  authors: [{ name: "Giannis Foras", url: "https://github.com/GiannisF12" }],
+  creator: "Giannis Foras",
+  keywords: [
+    "Giannis Foras",
+    "full-stack developer",
+    "entry-level developer",
+    // main stack
+    "Java",
+    "Spring Boot",
+    "Next.js",
+    "TypeScript",
+    "React",
+    // databases / devops
+    "PostgreSQL",
+    "MySQL",
+    "Docker",
+    // other shipped work
+    "PHP",
+    "Python",
+    "machine learning",
+    "data analytics",
+    "scikit-learn",
+    "TensorFlow",
+    // location
+    "Greece",
+    "Athens",
+    "Thessaloniki",
+    "portfolio",
+  ],
+  alternates: { canonical: "/" },
+  robots: { index: true, follow: true },
   openGraph: {
+    type: "website",
+    url: "https://giannisf12.dev",
+    siteName: "Giannis Foras",
     title: "Giannis Foras — Full-stack Developer",
     description:
-      "Selected projects by Giannis Foras, a full-stack developer.",
-    type: "website",
+      "Computer Science graduate building with Java, Spring Boot, and Next.js.",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Giannis Foras — Full-stack Developer",
+    description:
+      "Computer Science graduate building with Java, Spring Boot, and Next.js.",
   },
 };
 

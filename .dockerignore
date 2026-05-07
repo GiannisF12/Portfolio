@@ -1,0 +1,25 @@
+# Build artifacts
+.next
+node_modules
+out
+
+# VCS
+.git
+.gitignore
+
+# Editor / OS
+.vscode
+.idea
+.DS_Store
+
+# Env files (mount at runtime instead)
+.env
+.env.local
+.env.development
+.env.production
+
+# Misc
+README.md
+*.log
+npm-debug.log*
+.next/cache

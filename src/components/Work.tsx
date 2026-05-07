@@ -42,7 +42,7 @@ export default function Work({
               key={p.slug}
               project={p}
               delayMs={startDelayMs + i * 70}
-              priority={priorityFirst && i === 0}
+              priority={priorityFirst}
             />
           ))}
         </div>
