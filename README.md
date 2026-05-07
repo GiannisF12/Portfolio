@@ -1,4 +1,4 @@
-# Portfolio — Giannis Foras
+# Portfolio
 
 Personal portfolio site. Single page, dark, projects-first.
 
