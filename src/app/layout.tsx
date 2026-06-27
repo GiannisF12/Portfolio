@@ -74,11 +74,20 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`${syne.variable} ${geistMono.variable} antialiased`}
-    >
+    <html lang="en" className={`${syne.variable} ${geistMono.variable} antialiased`}>
+
+      <head>
+
+        {/* Umami Analytics */}
+        <script 
+          defer src="https://analytics.giannisf12.dev/script.js" 
+          data-website-id="1fffb62e-bd58-450b-9750-0ef089559128">
+        </script>
+
+      </head>
+
       <body>{children}</body>
+
     </html>
   );
 }
